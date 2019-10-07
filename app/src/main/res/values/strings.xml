@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Vk sdk</string>
+    <string name="login_hello">Вас приветствует приложение Друзья ВК \nПожалуйста, нажмите кнопку Войтиб чтобы увидеть ваших друзей</string>
+    <string name="login_enter">Войти</string>
 </resources>
