@@ -3,6 +3,7 @@ package com.infernal93.vksdk.presenters
 import android.os.Handler
 import com.arellomobile.mvp.InjectViewState
 import com.arellomobile.mvp.MvpPresenter
+import com.infernal93.vksdk.R
 import com.infernal93.vksdk.views.LoginView
 
 @InjectViewState
@@ -14,7 +15,7 @@ class LoginPresenter: MvpPresenter<LoginView>() {
             if (isSuccess) {
                 viewState.openFriends()
             } else {
-                viewState.showError(text = "Login data is incorrect")
+                viewState.showError(textResource = R.string.login_error_credentials)
             }
         }, 500)
     }
