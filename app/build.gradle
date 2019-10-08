@@ -36,13 +36,11 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
     // MVP use Moxy
-    String moxyVersion = '1.5.5'
-    String moxyXVersion = '1.7.0'
 
-    kapt "com.arello-mobile:moxy-compiler:$moxyVersion"
-    implementation "com.arello-mobile:moxy:$moxyVersion"
+    def moxyXVersion = '1.7.0'
+    implementation "tech.schoolhelper:moxy-x:$moxyXVersion"
+    kapt "tech.schoolhelper:moxy-x-compiler:$moxyXVersion"
     implementation "tech.schoolhelper:moxy-x-androidx:$moxyXVersion"
-    implementation "tech.schoolhelper:moxy-x-material:$moxyXVersion"
 
     // Dagger
     String daggerVersion = '2.24'
@@ -54,6 +52,6 @@ dependencies {
     // Recycler View
     implementation 'androidx.recyclerview:recyclerview:1.0.0'
 
-
+    // Circular Progress View
     implementation 'com.github.rahatarmanahmed:circularprogressview:2.5.0'
 }
