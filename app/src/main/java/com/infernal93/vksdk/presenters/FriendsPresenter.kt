@@ -3,7 +3,7 @@ package com.infernal93.vksdk.presenters
 import com.arellomobile.mvp.InjectViewState
 import com.arellomobile.mvp.MvpPresenter
 import com.infernal93.vksdk.R
-import com.infernal93.vksdk.models.FriendModel
+import com.infernal93.vksdk.entity.Friend
 import com.infernal93.vksdk.providers.FriendsProvider
 import com.infernal93.vksdk.views.FriendsView
 
@@ -20,7 +20,7 @@ class FriendsPresenter: MvpPresenter<FriendsView>() {
           FriendsProvider(presenter = this).loadFriends()
     }
 
-    fun friendsLoaded(friendsList: ArrayList<FriendModel>) {
+    fun friendsLoaded(friendsList: ArrayList<Friend>) {
         viewState.endLoading()
         if (friendsList.size == 0) {
             viewState.setupEmptyList()

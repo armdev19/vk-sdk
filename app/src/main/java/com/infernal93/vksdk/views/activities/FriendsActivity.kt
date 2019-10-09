@@ -1,4 +1,4 @@
-package com.infernal93.vksdk.activities
+package com.infernal93.vksdk.views.activities
 
 import android.os.Bundle
 import android.text.Editable
@@ -9,8 +9,8 @@ import androidx.recyclerview.widget.OrientationHelper
 import com.arellomobile.mvp.MvpAppCompatActivity
 import com.arellomobile.mvp.presenter.InjectPresenter
 import com.infernal93.vksdk.R
-import com.infernal93.vksdk.adapters.FriendsAdapter
-import com.infernal93.vksdk.models.FriendModel
+import com.infernal93.vksdk.views.adapters.FriendsAdapter
+import com.infernal93.vksdk.entity.Friend
 import com.infernal93.vksdk.presenters.FriendsPresenter
 import com.infernal93.vksdk.views.FriendsView
 import kotlinx.android.synthetic.main.activity_friends.*
@@ -62,7 +62,7 @@ class FriendsActivity : MvpAppCompatActivity(), FriendsView {
         txt_friends_no_items.visibility = View.VISIBLE
     }
 
-    override fun setupFriendsList(friendsList: ArrayList<FriendModel>) {
+    override fun setupFriendsList(friendsList: ArrayList<Friend>) {
         recycler_friends.visibility = View.VISIBLE
         txt_friends_no_items.visibility = View.GONE
 
