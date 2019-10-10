@@ -1,4 +1,4 @@
-package com.infernal93.vksdk.activities
+package com.infernal93.vksdk.views.activities
 
 import android.content.Intent
 import android.os.Bundle

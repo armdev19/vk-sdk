@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#008577</color>
-    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorPrimary">@color/vk_share_top_blue_color</color>
+    <color name="colorPrimaryDark">@color/vk_share_top_blue_color</color>
     <color name="colorAccent">#D81B60</color>
 
-    <color name="white">#FFFFFF</color>
+    <color name="white">@color/vk_white</color>
+    <color name="gray">#253A4B</color>
+    <color name="light_gray">#E8EBEC</color>
 </resources>

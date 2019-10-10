@@ -14,9 +14,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".activities.FriendsActivity"/>
+        <activity android:name="com.infernal93.vksdk.views.activities.FriendsActivity"/>
         <activity android:name="com.vk.sdk.VKServiceActivity" android:label="ServiceActivity" android:theme="@style/VK.Transparent" />
-        <activity android:name=".activities.LoginActivity">
+        <activity android:name="com.infernal93.vksdk.views.activities.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

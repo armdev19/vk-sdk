@@ -1,10 +1,9 @@
 package com.infernal93.vksdk.providers
 
 import android.os.Handler
-import android.util.Log
 import com.google.gson.JsonParser
 import com.infernal93.vksdk.R
-import com.infernal93.vksdk.models.FriendModel
+import com.infernal93.vksdk.entity.Friend
 import com.infernal93.vksdk.presenters.FriendsPresenter
 import com.vk.sdk.api.*
 
@@ -13,13 +12,13 @@ class FriendsProvider(var presenter: FriendsPresenter) {
 
     fun testLoadFriends(hasFriends: Boolean) {
         Handler().postDelayed({
-            val friendsList: ArrayList<FriendModel> = ArrayList()
+            val friendsList: ArrayList<Friend> = ArrayList()
             if (hasFriends) {
-                val friend1 = FriendModel(name = "Ivan", surname = "Ivanov", city = null,
+                val friend1 = Friend(name = "Ivan", surname = "Ivanov", city = null,
                     avatar = "https://sun9-18.userapi.com/c851024/v851024548/186e9a/f4dyui3ClXo.jpg", isOnline = false)
-                val friend2 = FriendModel(name = "Armen", surname = "Mkhitaryan", city = "Saint Piterburg",
+                val friend2 = Friend(name = "Armen", surname = "Mkhitaryan", city = "Saint Piterburg",
                     avatar = "https://sun9-63.userapi.com/c847216/v847216984/12cb4e/SCEhQc79rXA.jpg", isOnline = true)
-                val friend3 = FriendModel(name = "Egor", surname = "Sidorov", city = "Moscow",
+                val friend3 = Friend(name = "Egor", surname = "Sidorov", city = "Moscow",
                     avatar = "https://sun1-86.userapi.com/c841239/v841239152/63281/AiR6iXGeO2M.jpg", isOnline = false)
                 friendsList.add(friend1)
                 friendsList.add(friend2)
@@ -40,7 +39,7 @@ class FriendsProvider(var presenter: FriendsPresenter) {
                 val jsonParser = JsonParser()
                 val parsedJson = jsonParser.parse(response!!.json.toString()).asJsonObject
 
-                val friendsList: ArrayList<FriendModel> = ArrayList()
+                val friendsList: ArrayList<Friend> = ArrayList()
 
                 parsedJson.get("response").asJsonObject.getAsJsonArray("items").forEach {
 
@@ -50,7 +49,7 @@ class FriendsProvider(var presenter: FriendsPresenter) {
                         it.asJsonObject.get("city").asJsonObject.get("title").asString
                     }
 
-                    val friend = FriendModel(name = it.asJsonObject.get("first_name").asString,
+                    val friend = Friend(name = it.asJsonObject.get("first_name").asString,
                         surname = it.asJsonObject.get("last_name").asString,
                         city = city,
                         avatar = it.asJsonObject.get("photo_100").asString,

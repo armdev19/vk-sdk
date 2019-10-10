@@ -43,9 +43,9 @@ dependencies {
 
     // Dagger
     def daggerVersion = '2.24'
-    kapt "com.google.dagger:dagger-android-processor:$daggerVersion"
-    api "com.google.dagger:dagger-android:$daggerVersion"
-    api "com.google.dagger:dagger-android-support:$daggerVersion"
+    //kapt "com.google.dagger:dagger-android-processor:$daggerVersion"
+    //api "com.google.dagger:dagger-android:$daggerVersion"
+    //api "com.google.dagger:dagger-android-support:$daggerVersion"
 
     // VK SDK
     implementation 'com.vk:androidsdk:1.6.9'
